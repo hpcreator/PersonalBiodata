@@ -1,14 +1,10 @@
 /**This function is used for flip the card */
 document.getElementById('clickToFlap').addEventListener('click', function() {
   document.getElementById('flipCard').classList.toggle('flip');
-  setTimeout(() => {
-    document.getElementById('back-card').classList.toggle('d-block');
-  }, 200);
 });
 
-
-$( document ).ready(function() {
-    //this function is used for making the details html
+//this function is used for making the details html
+$(function() {
     var detailsWrapper = document.getElementById("detail-list"); // get the details html div
 
     var myDetailHTML = ''; //variable that hold my details html
@@ -41,7 +37,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Height",
-            value : `5' 8"`,
+            value : `5' 6"`,
         },
         {  
             key : "Cast",
@@ -57,7 +53,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Profession",
-            value : "Android Developer at Openxcell Technolabs",
+            value : "Software Engineer",
         },
         {  
             key : "Father's Name",
@@ -65,7 +61,7 @@ $( document ).ready(function() {
         },
         {  
             key : "His Profession",
-            value : "Social Worker",
+            value : "Farmer",
         },
         {  
             key : "Mother's Name",
@@ -73,7 +69,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Her Profession",
-            value : "House Maker",
+            value : "Housewife",
         },
         {  
             key : "Brother",
@@ -107,20 +103,16 @@ $( document ).ready(function() {
 
     detailsWrapper.innerHTML = myDetailHTML //adding the dynamic html as inner HTML of my details div
         
+});
 
-
-    //this function is used for showing my all photos
-
+//this function is used for showing my all photos
+$(function() {
     var imagesWrapper = document.getElementById("all-images"); //this is holding the parent container where my all photo's html will be inserted 
 
     //this is the variable that hold my image name and my all images exist in assets folder
     var myImageName = [
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
+        'harsh2.jpg',
+        'harsh3.jpg',
     ]
 
     var myImageHTML = '';  //variable that hold the html of my all photos
@@ -130,10 +122,11 @@ $( document ).ready(function() {
     }
 
     imagesWrapper.innerHTML = myImageHTML  //adding the dynamic html of my all photos as inner HTML of parent div
+});
 
 
-    //this function is used for open the image into popup
-
+//this function is used for open the image into popup
+$(function() {
     $('.pop-img').on('click', function() {
         $('.imagepreview').attr('src', $(this).attr('src'));
         $('#imagemodal').modal('show');   
