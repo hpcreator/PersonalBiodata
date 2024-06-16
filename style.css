@@ -37,7 +37,7 @@ body {
 .card-container {
     width: 95%;
     max-width: 600px;
-    height: 65%;
+    height: 75%;
     perspective: 1000px;
     margin-top: -20px;
 }
@@ -63,7 +63,7 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -85,7 +85,7 @@ body {
 
 .card-front .details {
     text-align: center;
-    padding: 14px 0;
+    padding: 20px 0;
 }
 
 .card-back {
@@ -95,7 +95,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 10px 20px 20px 20px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,7 +111,7 @@ body {
 .detail-list {
     display: grid;
     grid-template-columns: max-content auto;
-    grid-gap: 8px;
+    grid-gap: 10px;
 }
 
 hr{
@@ -124,11 +124,10 @@ hr{
 
 .buttonFlipCard{
     color: darkslategray;
-    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 80%, rgba(0, 0, 0, 0.6) 70%);
     mask-size: 200%;
     animation: shine 2s infinite;
 }
-  
 /* Optional: Remove vendor prefixes if browser compatibility is not a major concern */
 @keyframes shine {
     from {
