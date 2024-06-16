@@ -37,7 +37,7 @@ body {
 .card-container {
     width: 95%;
     max-width: 600px;
-    height: 75%;
+    height: 65%;
     perspective: 1000px;
     margin-top: -20px;
 }
@@ -63,7 +63,7 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px 20px;
     box-sizing: border-box;
 }
 
@@ -85,7 +85,7 @@ body {
 
 .card-front .details {
     text-align: center;
-    padding: 20px 0;
+    padding: 14px 0;
 }
 
 .card-back {
@@ -95,7 +95,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
