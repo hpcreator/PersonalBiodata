@@ -41,7 +41,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Height",
-            value : `5' 8"`,
+            value : `5' 6"`,
         },
         {  
             key : "Cast",
@@ -57,30 +57,30 @@ $( document ).ready(function() {
         },
         {  
             key : "Profession",
-            value : "Android Developer at Openxcell Technolabs",
+            value : "Software Engineer",
         },
         {  
             key : "Father's Name",
             value : "Joginbhai Vadilal Patel",
         },
         {  
-            key : "His Profession",
-            value : "Social Worker",
+            key : "Fathers's Profession",
+            value : "Farmer",
         },
         {  
             key : "Mother's Name",
             value : "Urmilaben Joginbhai Patel",
         },
         {  
-            key : "Her Profession",
-            value : "House Maker",
+            key : "Mother's Profession",
+            value : "House Wife",
         },
         {  
             key : "Brother",
             value : "Meet Patel",
         },
         {  
-            key : "His Profession",
+            key : "Brother's Profession",
             value : "Mechanical Engineer",
         },
         {                  
@@ -115,12 +115,8 @@ $( document ).ready(function() {
 
     //this is the variable that hold my image name and my all images exist in assets folder
     var myImageName = [
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
-        '1.jpg',
+        'harsh2.jpg',
+        'harsh3.jpg',
     ]
 
     var myImageHTML = '';  //variable that hold the html of my all photos
