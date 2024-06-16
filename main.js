@@ -1,10 +1,14 @@
 /**This function is used for flip the card */
 document.getElementById('clickToFlap').addEventListener('click', function() {
   document.getElementById('flipCard').classList.toggle('flip');
+  setTimeout(() => {
+    document.getElementById('back-card').classList.toggle('d-block');
+  }, 200);
 });
 
-//this function is used for making the details html
-$(function() {
+// when document is ready this function is called
+$( document ).ready(function() {
+    //this function is used for making the details html
     var detailsWrapper = document.getElementById("detail-list"); // get the details html div
 
     var myDetailHTML = ''; //variable that hold my details html
@@ -37,7 +41,7 @@ $(function() {
         },
         {  
             key : "Height",
-            value : `5' 6"`,
+            value : `5' 8"`,
         },
         {  
             key : "Cast",
@@ -53,7 +57,7 @@ $(function() {
         },
         {  
             key : "Profession",
-            value : "Software Engineer",
+            value : "Android Developer at Openxcell Technolabs",
         },
         {  
             key : "Father's Name",
@@ -61,7 +65,7 @@ $(function() {
         },
         {  
             key : "His Profession",
-            value : "Farmer",
+            value : "Social Worker",
         },
         {  
             key : "Mother's Name",
@@ -69,7 +73,7 @@ $(function() {
         },
         {  
             key : "Her Profession",
-            value : "Housewife",
+            value : "House Maker",
         },
         {  
             key : "Brother",
@@ -103,16 +107,20 @@ $(function() {
 
     detailsWrapper.innerHTML = myDetailHTML //adding the dynamic html as inner HTML of my details div
         
-});
 
-//this function is used for showing my all photos
-$(function() {
+
+    //this function is used for showing my all photos
+
     var imagesWrapper = document.getElementById("all-images"); //this is holding the parent container where my all photo's html will be inserted 
 
     //this is the variable that hold my image name and my all images exist in assets folder
     var myImageName = [
-        'harsh2.jpg',
-        'harsh3.jpg',
+        '1.jpg',
+        '1.jpg',
+        '1.jpg',
+        '1.jpg',
+        '1.jpg',
+        '1.jpg',
     ]
 
     var myImageHTML = '';  //variable that hold the html of my all photos
@@ -122,11 +130,10 @@ $(function() {
     }
 
     imagesWrapper.innerHTML = myImageHTML  //adding the dynamic html of my all photos as inner HTML of parent div
-});
 
 
-//this function is used for open the image into popup
-$(function() {
+    //this function is used for open the image into popup
+
     $('.pop-img').on('click', function() {
         $('.imagepreview').attr('src', $(this).attr('src'));
         $('#imagemodal').modal('show');   
