@@ -1,0 +1,141 @@
+body {
+    /* background-color: #f8f9fa; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 2%;
+    gap: 5%;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+    /* background-image:url('./assets/rose-background.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+    background: linear-gradient(0deg, #868ee9c9 0%, #ffffff00 100%), no-repeat center / cover;
+
+}
+
+.header {
+    width: 80px;
+    height: auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+.header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card-container {
+    width: 95%;
+    max-width: 600px;
+    height: 75%;
+    perspective: 1000px;
+    margin-top: -20px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front img {
+    border-radius: 20px;
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card-front .details {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.card-back {
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-back-img img {
+    border-radius: 20px;
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+.detail-list {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-gap: 8px;
+}
+
+hr{
+    border-width: 5px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.buttonFlipCard{
+    color: darkslategray;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+    mask-size: 200%;
+    animation: shine 2s infinite;
+}
+  
+/* Optional: Remove vendor prefixes if browser compatibility is not a major concern */
+@keyframes shine {
+    from {
+        mask-position: 150%;
+    }
+
+    to {
+        mask-position: -50%;
+    }
+}
