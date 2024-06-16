@@ -1,10 +1,14 @@
 /**This function is used for flip the card */
 document.getElementById('clickToFlap').addEventListener('click', function() {
   document.getElementById('flipCard').classList.toggle('flip');
+  setTimeout(() => {
+    document.getElementById('back-card').classList.toggle('d-block');
+  }, 200);
 });
 
-//this function is used for making the details html
-$(function() {
+
+$( document ).ready(function() {
+    //this function is used for making the details html
     var detailsWrapper = document.getElementById("detail-list"); // get the details html div
 
     var myDetailHTML = ''; //variable that hold my details html
@@ -103,10 +107,10 @@ $(function() {
 
     detailsWrapper.innerHTML = myDetailHTML //adding the dynamic html as inner HTML of my details div
         
-});
 
-//this function is used for showing my all photos
-$(function() {
+
+    //this function is used for showing my all photos
+
     var imagesWrapper = document.getElementById("all-images"); //this is holding the parent container where my all photo's html will be inserted 
 
     //this is the variable that hold my image name and my all images exist in assets folder
@@ -126,11 +130,10 @@ $(function() {
     }
 
     imagesWrapper.innerHTML = myImageHTML  //adding the dynamic html of my all photos as inner HTML of parent div
-});
 
 
-//this function is used for open the image into popup
-$(function() {
+    //this function is used for open the image into popup
+
     $('.pop-img').on('click', function() {
         $('.imagepreview').attr('src', $(this).attr('src'));
         $('#imagemodal').modal('show');   
