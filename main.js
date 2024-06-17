@@ -64,7 +64,7 @@ $( document ).ready(function() {
             value : "Joginbhai Vadilal Patel",
         },
         {  
-            key : "Fathers's Profession",
+            key : "Father's Profession",
             value : "Farmer",
         },
         {  
@@ -73,7 +73,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Mother's Profession",
-            value : "House Wife",
+            value : "Housewife",
         },
         {  
             key : "Brother",
@@ -93,10 +93,10 @@ $( document ).ready(function() {
         },
         {  
             key : "Address",
-            value : "1328, Mota Patelwada, beside Swaminarayan Temple, Kapadwanj, Kheda-387620",
+            value : "1328, Mota Patelwada, besides Swaminarayan Temple, Kapadwanj, Kheda-387620",
         },
         {  
-            key : "Food Habbit",
+            key : "Food Habit",
             value : "Veg",
         }
     ]
