@@ -1,5 +1,4 @@
 body {
-    /* background-color: #f8f9fa; */
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -11,13 +10,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 
-    /* background-image:url('./assets/rose-background.jpg');
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-    background: linear-gradient(0deg, #868ee9c9 0%, #ffffff00 100%), no-repeat center / cover;
-
+    background: linear-gradient(0deg, #FF80AB86 0%, #ffffff00 100%), no-repeat center / cover;
 }
 
 .header {
