@@ -41,7 +41,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Height",
-            value : `5' 6"`,
+            value : `5' 8"`,
         },
         {  
             key : "Cast",
@@ -115,8 +115,9 @@ $( document ).ready(function() {
 
     //this is the variable that hold my image name and my all images exist in assets folder
     var myImageName = [
-        'harsh2.jpg',
-        'harsh3.JPG',
+        'meet2.jpg',
+        'meet3.jpg',
+        'meet4.JPG',
     ]
 
     var myImageHTML = '';  //variable that hold the html of my all photos
