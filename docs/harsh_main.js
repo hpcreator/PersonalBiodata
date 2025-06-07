@@ -25,7 +25,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Time of birth",
-            value : "11:15 AM",
+            value : "11:30 AM",
         },
         {  
             key : "Place of birth",
@@ -37,11 +37,11 @@ $( document ).ready(function() {
         },
         {  
             key : "Weight",
-            value : "68 kg",
+            value : "70 kg",
         },
         {  
             key : "Height",
-            value : `5' 6"`,
+            value : `5' 5"`,
         },
         {  
             key : "Cast",
