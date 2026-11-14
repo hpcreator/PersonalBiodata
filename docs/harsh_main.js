@@ -41,7 +41,7 @@ $( document ).ready(function() {
         },
         {  
             key : "Height",
-            value : `5' 5"`,
+            value : `5' 6"`,
         },
         {  
             key : "Cast",
@@ -93,10 +93,10 @@ $( document ).ready(function() {
         },
         {  
             key : "Address",
-            value : "1328, Mota Patelwada, beside Swaminarayan Temple, Kapadwanj, Kheda-387620",
+            value : "C 1102, Aryaman Kalpvruksh, Hathijan Circle, Ahmedabad – 382445",
         },
         {  
-            key : "Food Habbit",
+            key : "Food Habit",
             value : "Veg",
         }
     ]
