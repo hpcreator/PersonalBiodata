@@ -1,3 +1,8 @@
+
+/* ==============================
+   BODY
+================================= */
+
 body {
     display: flex;
     flex-direction: column;
@@ -10,14 +15,17 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 
-    /* background-image:url('./assets/rose-background.jpg');
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-    background: linear-gradient(0deg, #868ee9c9 0%, #ffffff00 100%), no-repeat center / cover;
-
+    background: linear-gradient(
+        0deg,
+        #868ee9c9 0%,
+        #ffffff00 100%
+    ), no-repeat center / cover;
 }
+
+
+/* ==============================
+   HEADER
+================================= */
 
 .header {
     width: 80px;
@@ -33,6 +41,11 @@ body {
     border-radius: 50%;
 }
 
+
+/* ==============================
+   CARD CONTAINER
+================================= */
+
 .card-container {
     width: 95%;
     max-width: 600px;
@@ -40,6 +53,11 @@ body {
     perspective: 1000px;
     margin-top: -20px;
 }
+
+
+/* ==============================
+   CARD
+================================= */
 
 .card {
     width: 100%;
@@ -54,6 +72,11 @@ body {
     transform: rotateY(180deg);
 }
 
+
+/* ==============================
+   CARD FRONT AND BACK
+================================= */
+
 .card-front,
 .card-back {
     position: absolute;
@@ -65,6 +88,11 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+
+
+/* ==============================
+   CARD FRONT
+================================= */
 
 .card-front {
     display: flex;
@@ -87,6 +115,11 @@ body {
     padding: 20px 0;
 }
 
+
+/* ==============================
+   CARD BACK
+================================= */
+
 .card-back {
     color: #333;
     transform: rotateY(180deg);
@@ -107,27 +140,52 @@ body {
     cursor: pointer;
 }
 
+
+/* ==============================
+   PERSONAL DETAILS
+================================= */
+
 .detail-list {
     display: grid;
     grid-template-columns: max-content auto;
     grid-gap: 10px 20px;
 }
 
-hr{
+hr {
     border-width: 5px;
 }
 
-.cursor-pointer{
+
+/* ==============================
+   GENERAL UTILITIES
+================================= */
+
+.cursor-pointer {
     cursor: pointer;
 }
 
-.buttonFlipCard{
+
+/* ==============================
+   FLIP CARD HINT
+================================= */
+
+.buttonFlipCard {
     color: darkslategray;
-    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 80%, rgba(0, 0, 0, 0.6) 70%);
+    mask-image: linear-gradient(
+        -75deg,
+        rgba(0, 0, 0, 0.6) 30%,
+        #000 80%,
+        rgba(0, 0, 0, 0.6) 70%
+    );
     mask-size: 200%;
     animation: shine 2s infinite;
 }
-/* Optional: Remove vendor prefixes if browser compatibility is not a major concern */
+
+
+/* ==============================
+   FLIP HINT ANIMATION
+================================= */
+
 @keyframes shine {
     from {
         mask-position: 150%;
@@ -136,4 +194,65 @@ hr{
     to {
         mask-position: -50%;
     }
+}
+
+
+/* ==============================
+   IMAGE PREVIEW MODAL
+================================= */
+
+.image-modal-dialog {
+    width: min(88vw, 420px, 60vh) !important;
+    max-width: none !important;
+    margin: auto;
+}
+
+.image-modal-content {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+.image-modal-body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imagepreview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+
+/* ==============================
+   MODAL CLOSE BUTTON
+================================= */
+
+.image-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    z-index: 10;
+    font-size: 28px;
+    color: #fff;
+    opacity: 1;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    outline: none;
+}
+
+.image-modal-close:hover {
+    color: #fff;
+    opacity: 0.8;
 }
