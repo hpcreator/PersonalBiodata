@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * Renders the image gallery.
      */
     function renderGallery() {
-        const imageNames = ["harsh2.jpg", "harsh3.JPG", "harsh4.jpg", "harsh5.jpg", "harsh6.jpg"];
+        const imageNames = ["harsh2.jpg", "harsh3.JPG", "harsh4.jpg", "harsh5.jpg"];
         imagesWrapper.replaceChildren();
 
         imageNames.forEach((imageName) => {

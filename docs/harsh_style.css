@@ -318,30 +318,60 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
+
     margin-top: 24px;
-    margin-bottom: 0;
-    padding: 12px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 12px 22px;
+
+    border: 1px solid rgba(201, 177, 135, 0.45);
     border-radius: 50px;
-    background: linear-gradient(135deg, #a9854f, #806039);
-    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #343434 0%,
+        #171717 55%,
+        #080808 100%
+    );
+
+    color: #ffffff;
+
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.3px;
+
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(91, 67, 35, 0.25);
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.25);
+
     transition: all 0.3s ease;
 }
 
 .view-details-button:hover {
-    background: linear-gradient(135deg, #8f6d3d, #6e512e);
+    background: linear-gradient(
+        135deg,
+        #48443d 0%,
+        #22201c 55%,
+        #111111 100%
+    );
+
+    border-color: #c9b187;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(91, 67, 35, 0.35);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* Arrow alignment */
 .view-details-button span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
     font-size: 18px;
+    line-height: 1;
+
     transition: transform 0.3s ease;
 }
 
@@ -359,32 +389,58 @@ body {
     right: 25px;
     bottom: 25px;
     z-index: 9999;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+
     min-height: 52px;
     padding: 0 22px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border: 1px solid rgba(201, 177, 135, 0.45);
     border-radius: 50px;
-    background: linear-gradient(135deg, #a9854f, #806039);
-    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #343434 0%,
+        #171717 55%,
+        #080808 100%
+    );
+
+    color: #ffffff;
+
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.3px;
+
     cursor: pointer;
-    box-shadow: 0 5px 18px rgba(50, 38, 22, 0.3);
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+
     transition: all 0.3s ease;
 }
 
 .back-to-profile-button:hover {
-    background: linear-gradient(135deg, #8f6d3d, #6e512e);
+    background: linear-gradient(
+        135deg,
+        #48443d 0%,
+        #22201c 55%,
+        #111111 100%
+    );
+    border-color: #c9b187;
     transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(50, 38, 22, 0.4);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
 }
 
+/* Back arrow alignment */
 .back-to-profile-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
     font-size: 22px;
     line-height: 1;
     transition: transform 0.3s ease;
