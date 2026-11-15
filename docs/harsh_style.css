@@ -1,20 +1,17 @@
-
-/* ==============================
-   BODY
-================================= */
+/* =========================================
+   GLOBAL LAYOUT
+========================================= */
 
 body {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    margin-top: 2%;
-    gap: 5%;
+    justify-content: flex-start;
     align-items: center;
+    gap: 5%;
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: "Roboto", sans-serif;
     background: linear-gradient(
         0deg,
         #868ee9c9 0%,
@@ -23,15 +20,15 @@ body {
 }
 
 
-/* ==============================
+/* =========================================
    HEADER
-================================= */
+========================================= */
 
 .header {
+    position: relative;
     width: 80px;
     height: auto;
     margin-top: 10px;
-    position: relative;
 }
 
 .header img {
@@ -42,164 +39,223 @@ body {
 }
 
 
-/* ==============================
-   CARD CONTAINER
-================================= */
+/* =========================================
+   CARD LAYOUT AND FLIP
+========================================= */
 
 .card-container {
     width: 95%;
     max-width: 600px;
     height: 75%;
-    perspective: 1000px;
     margin-top: -20px;
+    perspective: 1000px;
 }
 
-
-/* ==============================
-   CARD
-================================= */
-
 .card {
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 20px;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    position: relative;
 }
 
 .card.flip {
     transform: rotateY(180deg);
 }
 
-
-/* ==============================
-   CARD FRONT AND BACK
-================================= */
-
 .card-front,
 .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 20px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 
-/* ==============================
-   CARD FRONT
-================================= */
+/* =========================================
+   FRONT CARD
+========================================= */
 
 .card-front {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-front img {
-    border-radius: 20px;
+.card-front > h5 {
+    flex-shrink: 0;
+    margin: 0 0 14px;
+}
+
+.card-front > img {
+    flex: 1 1 auto;
     width: 100%;
-    height: 75%;
+    height: auto;
+    min-height: 0;
+    margin-bottom: 16px;
     object-fit: cover;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 .card-front .details {
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 8px;
     text-align: center;
-    padding: 20px 0;
+}
+
+.card-front .details h4 {
+    margin-bottom: 8px;
+}
+
+.card-front .details h5 {
+    margin-bottom: 0;
 }
 
 
-/* ==============================
-   CARD BACK
-================================= */
+/* =========================================
+   BACK CARD AND GALLERY
+========================================= */
 
 .card-back {
-    color: #333;
-    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     padding: 20px;
+    color: #333;
+    transform: rotateY(180deg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-back-img img {
-    border-radius: 20px;
     width: 100%;
     height: 75%;
+    padding: 10px 0;
     object-fit: cover;
-    padding: 10px 0px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 
-/* ==============================
-   PERSONAL DETAILS
-================================= */
+/* =========================================
+   BIODATA DETAIL SECTIONS
+========================================= */
 
-.detail-list {
+#detail-list.detail-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+#detail-list .detail-section {
+    width: 100%;
+    padding: 13px 14px 14px;
+    border: 1px solid #e8e5df;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.78);
+    box-sizing: border-box;
+}
+
+#detail-list .detail-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 11px;
+}
+
+#detail-list .detail-section-number {
+    display: flex;
+    flex: 0 0 32px;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    color: #756044;
+    background: #f1ece4;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#detail-list .detail-section-heading-text {
+    min-width: 0;
+}
+
+#detail-list .detail-section-heading h6 {
+    margin: 0;
+    color: #292b34;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#detail-list .detail-section-heading p {
+    margin: 2px 0 0;
+    color: #92908b;
+    font-size: 10px;
+}
+
+#detail-list .detail-section-icon {
+    margin-left: auto;
+    color: #b19a78;
+    font-size: 20px;
+}
+
+#detail-list .detail-items-grid {
     display: grid;
-    grid-template-columns: max-content auto;
-    grid-gap: 10px 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
 }
 
-hr {
-    border-width: 5px;
+#detail-list .detail-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    min-height: 54px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    background: #f7f7f5;
+    box-sizing: border-box;
 }
 
-
-/* ==============================
-   GENERAL UTILITIES
-================================= */
-
-.cursor-pointer {
-    cursor: pointer;
+#detail-list .detail-item-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #888780;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-
-/* ==============================
-   FLIP CARD HINT
-================================= */
-
-.buttonFlipCard {
-    color: darkslategray;
-    mask-image: linear-gradient(
-        -75deg,
-        rgba(0, 0, 0, 0.6) 30%,
-        #000 80%,
-        rgba(0, 0, 0, 0.6) 70%
-    );
-    mask-size: 200%;
-    animation: shine 2s infinite;
+#detail-list .detail-item-value {
+    display: block;
+    color: #30313a;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
-
-/* ==============================
-   FLIP HINT ANIMATION
-================================= */
-
-@keyframes shine {
-    from {
-        mask-position: 150%;
-    }
-
-    to {
-        mask-position: -50%;
-    }
+#detail-list .detail-section:last-child .detail-item-card:last-child {
+    grid-column: 1 / -1;
 }
 
 
-/* ==============================
+/* =========================================
    IMAGE PREVIEW MODAL
-================================= */
+========================================= */
 
 .image-modal-dialog {
     width: min(88vw, 420px, 60vh) !important;
@@ -208,22 +264,22 @@ hr {
 }
 
 .image-modal-content {
+    position: relative;
     width: 100%;
     aspect-ratio: 3 / 4;
     border: none;
     border-radius: 14px;
     overflow: hidden;
     background: #fff;
-    position: relative;
 }
 
 .image-modal-body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -235,24 +291,201 @@ hr {
     border-radius: 14px;
 }
 
-
-/* ==============================
-   MODAL CLOSE BUTTON
-================================= */
-
 .image-modal-close {
     position: absolute;
     top: 8px;
     right: 12px;
     z-index: 10;
-    font-size: 28px;
     color: #fff;
+    font-size: 28px;
     opacity: 1;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
     outline: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .image-modal-close:hover {
     color: #fff;
     opacity: 0.8;
+}
+
+
+/* =========================================
+   FRONT CARD - VIEW DETAILS BUTTON
+========================================= */
+
+.view-details-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 0;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    background: linear-gradient(135deg, #a9854f, #806039);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(91, 67, 35, 0.25);
+    transition: all 0.3s ease;
+}
+
+.view-details-button:hover {
+    background: linear-gradient(135deg, #8f6d3d, #6e512e);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(91, 67, 35, 0.35);
+}
+
+.view-details-button span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.view-details-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   FIXED BACK TO PROFILE BUTTON
+========================================= */
+
+.back-to-profile-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 22px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    background: linear-gradient(135deg, #a9854f, #806039);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(50, 38, 22, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-to-profile-button:hover {
+    background: linear-gradient(135deg, #8f6d3d, #6e512e);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(50, 38, 22, 0.4);
+}
+
+.back-to-profile-arrow {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.back-to-profile-button:hover .back-to-profile-arrow {
+    transform: translateX(-4px);
+}
+
+.back-to-profile-button[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.view-details-button:focus-visible,
+.back-to-profile-button:focus-visible {
+    outline: 3px solid rgba(169, 133, 79, 0.4);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   RESPONSIVE STYLES
+========================================= */
+
+@media (max-width: 600px) {
+    .card-front {
+        padding: 16px;
+    }
+
+    .card-front > h5 {
+        margin-bottom: 12px;
+    }
+
+    .card-front > img {
+        margin-bottom: 14px;
+    }
+
+    .card-front .details {
+        padding-bottom: 6px;
+    }
+
+    .card-front .details h4 {
+        margin-bottom: 6px;
+    }
+
+    .view-details-button {
+        gap: 8px;
+        margin-top: 20px;
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    #detail-list.detail-sections {
+        gap: 9px;
+    }
+
+    #detail-list .detail-section {
+        padding: 10px;
+    }
+
+    #detail-list .detail-items-grid {
+        gap: 6px;
+    }
+
+    #detail-list .detail-item-card {
+        padding: 8px;
+    }
+
+    #detail-list .detail-item-label {
+        font-size: 9px;
+    }
+
+    #detail-list .detail-item-value {
+        font-size: 11px;
+    }
+
+    #detail-list .detail-section-heading h6 {
+        font-size: 13px;
+    }
+
+    .back-to-profile-button {
+        right: 18px;
+        bottom: max(18px, env(safe-area-inset-bottom));
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        min-height: 54px;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .back-to-profile-label {
+        display: none;
+    }
+
+    .back-to-profile-arrow {
+        font-size: 25px;
+    }
 }

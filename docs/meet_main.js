@@ -123,7 +123,7 @@ $( document ).ready(function() {
     var myImageHTML = '';  //variable that hold the html of my all photos
 
     for (var i = 0; i < myImageName.length; i++) {//generating html by of my all photos by using loop
-        myImageHTML += `<div class="card-back-img"><img class="pop-img" src="./assets/${myImageName[i]}" alt="Profile Picture"></div>`;
+        myImageHTML += `<div class="card-back-img"><img class="pop-img" src="./assets/meet/${myImageName[i]}" alt="Profile Picture"></div>`;
     }
 
     imagesWrapper.innerHTML = myImageHTML  //adding the dynamic html of my all photos as inner HTML of parent div
