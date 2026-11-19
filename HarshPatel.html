@@ -1,55 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Harsh Patel</title>
 
     <!-- Bootstrap -->
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
     <!-- Google Fonts -->
     <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@700&display=swap"
+    />
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="docs/harsh_style.css">
+    <link rel="stylesheet" href="docs/harsh_style.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/harsh/hp_favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/harsh/hp_favicon.png" />
 </head>
 
 <body>
 <!-- Header -->
 <div class="header">
-    <img src="./assets/ganesh.png" alt="Header Image">
+    <img src="./assets/ganesh.png" alt="Header Image" />
 </div>
 
 <!-- Biodata card -->
 <main class="card-container">
     <div class="card" id="flipCard">
-
         <!-- Front side -->
         <section class="card-front">
             <h5 class="font-weight-bold">Biodata</h5>
 
-            <img
-                    class="pop-img"
-                    src="assets/harsh/harsh1.jpg"
-                    alt="Profile Picture">
+            <img class="pop-img" src="assets/harsh/harsh6.png" alt="Profile Picture" />
 
             <div class="details">
                 <h4 class="font-weight-bold">Harsh Patel</h4>
                 <h5>Software Engineer</h5>
 
-                <button
-                        type="button"
-                        class="view-details-button"
-                        id="viewDetailsButton">
+                <button type="button" class="view-details-button" id="viewDetailsButton">
                     View Personal &amp; Family Details
                     <span aria-hidden="true">→</span>
                 </button>
@@ -58,18 +50,14 @@
 
         <!-- Back side -->
         <section class="card-back">
-            <h5 class="text-center font-weight-bold w-100 mb-3">
-                My Details
-            </h5>
+            <h5 class="text-center font-weight-bold w-100 mb-3">My Details</h5>
 
             <div class="overflow-auto d-none" id="back-card">
                 <dl class="detail-list" id="detail-list"></dl>
 
-                <hr class="mt-5">
+                <hr class="mt-5" />
 
-                <h5 class="m-0 font-weight-bold w-100 text-center">
-                    Images
-                </h5>
+                <h5 class="m-0 font-weight-bold w-100 text-center">Images</h5>
 
                 <div id="all-images"></div>
             </div>
@@ -91,29 +79,15 @@
 </button>
 
 <!-- Image preview modal -->
-<div
-        class="modal fade"
-        id="imagemodal"
-        tabindex="-1"
-        role="dialog"
-        aria-hidden="true">
-    <div
-            class="modal-dialog modal-dialog-centered image-modal-dialog"
-            role="document">
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered image-modal-dialog" role="document">
         <div class="modal-content image-modal-content">
-            <button
-                    type="button"
-                    class="close image-modal-close"
-                    data-dismiss="modal"
-                    aria-label="Close">
+            <button type="button" class="close image-modal-close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
 
             <div class="modal-body image-modal-body">
-                <img
-                        src=""
-                        class="imagepreview"
-                        alt="Image Preview">
+                <img src="" class="imagepreview" alt="Image Preview" />
             </div>
         </div>
     </div>

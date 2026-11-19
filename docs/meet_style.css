@@ -12,13 +12,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    background: linear-gradient(
-        0deg,
-        #FF80AB86 0%,
-        #ffffff00 100%
-    ), no-repeat center / cover;
+    background:
+        linear-gradient(0deg, #ff80ab86 0%, #ffffff00 100%),
+        no-repeat center / cover;
 }
-
 
 /* =========================================
    HEADER
@@ -37,7 +34,6 @@ body {
     object-fit: cover;
     border-radius: 50%;
 }
-
 
 /* =========================================
    CARD LAYOUT AND FLIP
@@ -75,7 +71,6 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
 
 /* =========================================
    FRONT CARD
@@ -122,7 +117,6 @@ body {
     margin-bottom: 0;
 }
 
-
 /* =========================================
    BACK CARD AND GALLERY
 ========================================= */
@@ -146,7 +140,6 @@ body {
     border-radius: 20px;
     cursor: pointer;
 }
-
 
 /* =========================================
    BIODATA DETAIL SECTIONS
@@ -212,6 +205,36 @@ body {
     font-size: 20px;
 }
 
+/* =========================================
+   BIODATA SUBGROUPS
+========================================= */
+
+#detail-list .detail-section-content {
+    width: 100%;
+}
+
+#detail-list .detail-subgroup {
+    width: 100%;
+}
+
+#detail-list .detail-subgroup + .detail-subgroup {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #e8e5df;
+}
+
+#detail-list .detail-subgroup-title {
+    margin: 0 0 9px;
+    color: #756044;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+/* =========================================
+   BIODATA ITEM GRID
+========================================= */
+
 #detail-list .detail-items-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -251,7 +274,6 @@ body {
 #detail-list .detail-section:last-child .detail-item-card:last-child {
     grid-column: 1 / -1;
 }
-
 
 /* =========================================
    IMAGE PREVIEW MODAL
@@ -308,7 +330,6 @@ body {
     opacity: 0.8;
 }
 
-
 /* =========================================
    FRONT CARD - VIEW DETAILS BUTTON
 ========================================= */
@@ -325,12 +346,7 @@ body {
     border: 1px solid rgba(201, 177, 135, 0.45);
     border-radius: 50px;
 
-    background: linear-gradient(
-        135deg,
-        #343434 0%,
-        #171717 55%,
-        #080808 100%
-    );
+    background: linear-gradient(135deg, #343434 0%, #171717 55%, #080808 100%);
 
     color: #ffffff;
 
@@ -347,12 +363,7 @@ body {
 }
 
 .view-details-button:hover {
-    background: linear-gradient(
-        135deg,
-        #48443d 0%,
-        #22201c 55%,
-        #111111 100%
-    );
+    background: linear-gradient(135deg, #48443d 0%, #22201c 55%, #111111 100%);
 
     border-color: #c9b187;
     transform: translateY(-2px);
@@ -379,7 +390,6 @@ body {
     transform: translateX(4px);
 }
 
-
 /* =========================================
    FIXED BACK TO PROFILE BUTTON
 ========================================= */
@@ -401,12 +411,7 @@ body {
     border: 1px solid rgba(201, 177, 135, 0.45);
     border-radius: 50px;
 
-    background: linear-gradient(
-        135deg,
-        #343434 0%,
-        #171717 55%,
-        #080808 100%
-    );
+    background: linear-gradient(135deg, #343434 0%, #171717 55%, #080808 100%);
 
     color: #ffffff;
 
@@ -422,12 +427,8 @@ body {
 }
 
 .back-to-profile-button:hover {
-    background: linear-gradient(
-        135deg,
-        #48443d 0%,
-        #22201c 55%,
-        #111111 100%
-    );
+    background: linear-gradient(135deg, #48443d 0%, #22201c 55%, #111111 100%);
+
     border-color: #c9b187;
     transform: translateY(-3px);
 
@@ -454,7 +455,6 @@ body {
     display: none !important;
 }
 
-
 /* =========================================
    ACCESSIBILITY
 ========================================= */
@@ -464,7 +464,6 @@ body {
     outline: 3px solid rgba(169, 133, 79, 0.4);
     outline-offset: 4px;
 }
-
 
 /* =========================================
    RESPONSIVE STYLES
@@ -524,6 +523,17 @@ body {
 
     #detail-list .detail-section-heading h6 {
         font-size: 13px;
+    }
+
+    /* Subgroup spacing on mobile */
+    #detail-list .detail-subgroup + .detail-subgroup {
+        margin-top: 11px;
+        padding-top: 10px;
+    }
+
+    #detail-list .detail-subgroup-title {
+        margin-bottom: 7px;
+        font-size: 10px;
     }
 
     .back-to-profile-button {

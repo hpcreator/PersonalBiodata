@@ -3,182 +3,338 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const flipCard = document.getElementById("flipCard");
-    const backCard = document.getElementById("back-card");
-    const viewDetailsButton = document.getElementById("viewDetailsButton");
-    const backToProfileButton = document.getElementById("backToProfileButton");
-    const detailsWrapper = document.getElementById("detail-list");
-    const imagesWrapper = document.getElementById("all-images");
+  const flipCard = document.getElementById("flipCard");
+  const backCard = document.getElementById("back-card");
+  const viewDetailsButton = document.getElementById("viewDetailsButton");
+  const backToProfileButton = document.getElementById("backToProfileButton");
+  const detailsWrapper = document.getElementById("detail-list");
+  const imagesWrapper = document.getElementById("all-images");
 
-    let flipTimer;
+  let flipTimer;
 
-    /**
-     * Switches between the profile and details sides of the card.
-     * @param {boolean} showDetails Whether to show the back side.
-     */
-    function setCardSide(showDetails) {
-        window.clearTimeout(flipTimer);
+  /**
+   * Switches between the profile and details sides of the card.
+   * @param {boolean} showDetails Whether to show the back side.
+   */
+  function setCardSide(showDetails) {
+    window.clearTimeout(flipTimer);
 
-        flipCard.classList.toggle("flip", showDetails);
-        backToProfileButton.hidden = !showDetails;
+    flipCard.classList.toggle("flip", showDetails);
+    backToProfileButton.hidden = !showDetails;
 
-        flipTimer = window.setTimeout(() => {
-            backCard.classList.toggle("d-block", showDetails);
-            backCard.classList.toggle("d-none", !showDetails);
-        }, 200);
+    flipTimer = window.setTimeout(() => {
+      backCard.classList.toggle("d-block", showDetails);
+      backCard.classList.toggle("d-none", !showDetails);
+    }, 200);
+  }
+
+  // Front to back.
+  viewDetailsButton.addEventListener("click", () => {
+    setCardSide(true);
+  });
+
+  // Back to front.
+  backToProfileButton.addEventListener("click", () => {
+    setCardSide(false);
+  });
+
+  const biodata = [
+    {
+      label: "Name",
+      value: "Harsh Joginbhai Patel",
+      group: "Personal Information",
+    },
+    {
+      label: "Date of birth",
+      value: "31/05/1998",
+      group: "Personal Information",
+    },
+    {
+      label: "Time of birth",
+      value: "11:30 AM",
+      group: "Personal Information",
+    },
+    {
+      label: "Place of birth",
+      value: "Khambhat, Gujarat",
+      group: "Personal Information",
+    },
+    { label: "Complexion", value: "Fair", group: "Personal Information" },
+    { label: "Weight", value: "70 kg", group: "Personal Information" },
+    { label: "Height", value: `5' 6"`, group: "Personal Information" },
+
+    {
+      label: "Education",
+      value: "IT Engineer",
+      group: "Education & Profession",
+    },
+    {
+      label: "Profession",
+      value: "Software Engineer",
+      group: "Education & Profession",
+    },
+    {
+      label: "Work Place",
+      value: "KPIT Technologies Pvt. Ltd.",
+      group: "Education & Profession",
+    },
+    { label: "Work Location", value: "Pune", group: "Education & Profession" },
+
+    {
+      label: "Father's Name",
+      value: "Joginbhai Vadilal Patel",
+      group: "Family Information",
+    },
+    {
+      label: "Fathers's Profession",
+      value: "Farmer",
+      group: "Family Information",
+    },
+    {
+      label: "Mother's Name",
+      value: "Urmilaben Joginbhai Patel",
+      group: "Family Information",
+    },
+    {
+      label: "Mother's Profession",
+      value: "House Wife",
+      group: "Family Information",
+    },
+    { label: "Brother", value: "Meet Patel", group: "Family Information" },
+    {
+      label: "Brother's Profession",
+      value: "Mechanical Engineer",
+      group: "Family Information",
+    },
+
+    { label: "Cast", value: "Kadva Patel", group: "Community & Background" },
+    {
+      label: "Sub Cast",
+      value: "42 Gam  Kadva Patel",
+      group: "Community & Background",
+    },
+    { label: "Native", value: "Kapadwanj", group: "Community & Background" },
+    {
+      label: "Mosal",
+      value: "Finav, Khambhat",
+      group: "Community & Background",
+    },
+
+    // Section 05: Lifestyle subgroup.
+    {
+      label: "Food Habit",
+      value: "Veg",
+      group: "Lifestyle & Contact",
+      subgroup: "Lifestyle",
+    },
+    {
+      label: "Smoke/Drinking Habit",
+      value: "Never",
+      group: "Lifestyle & Contact",
+      subgroup: "Lifestyle",
+    },
+
+    {
+      label: "Hobbies",
+      value: "Movie Watching, Reading, Travelling",
+      group: "Lifestyle & Contact",
+      subgroup: "Lifestyle",
+    },
+
+    // Section 05: Address & Contact subgroup.
+    {
+      label: "Mobile Number (Self)",
+      value: "+91 7383186472",
+      group: "Lifestyle & Contact",
+      subgroup: "Address & Contact",
+    },
+    {
+      label: "Alternate Contact Number (Mother)",
+      value: "+91 9408841071",
+      group: "Lifestyle & Contact",
+      subgroup: "Address & Contact",
+    },
+    {
+      label: "Address",
+      value: "C 1102, Aryaman Kalpvruksh, Hathijan Circle, Ahmedabad – 382445",
+      group: "Lifestyle & Contact",
+      subgroup: "Address & Contact",
+    },
+  ];
+
+  const sections = [
+    {
+      title: "Personal Information",
+      subtitle: "A little about me",
+      number: "01",
+      icon: "👤",
+    },
+    {
+      title: "Education & Profession",
+      subtitle: "Education and career",
+      number: "02",
+      icon: "🎓",
+    },
+    {
+      title: "Family Information",
+      subtitle: "The people closest to me",
+      number: "03",
+      icon: "👨‍👩‍👦",
+    },
+    {
+      title: "Community & Background",
+      subtitle: "Roots and community",
+      number: "04",
+      icon: "🏡",
+    },
+    {
+      title: "Lifestyle & Contact",
+      subtitle: "Personal preferences and contact details",
+      number: "05",
+      icon: "📍",
+    },
+  ];
+
+  /**
+   * Creates an element and optionally assigns its class and text.
+   */
+  function createElement(tagName, className, text) {
+    const element = document.createElement(tagName);
+
+    if (className) {
+      element.className = className;
     }
 
-    // Front to back.
-    viewDetailsButton.addEventListener("click", () => {
-        setCardSide(true);
-    });
+    if (text !== undefined) {
+      element.textContent = text;
+    }
 
-    // Back to front.
-    backToProfileButton.addEventListener("click", () => {
-        setCardSide(false);
-    });
+    return element;
+  }
 
-    const biodata = [
-        { label: "Name", value: "Harsh Joginbhai Patel", group: "Personal Information" },
-        { label: "Date of birth", value: "31/05/1998", group: "Personal Information" },
-        { label: "Time of birth", value: "11:30 AM", group: "Personal Information" },
-        { label: "Place of birth", value: "Khambhat, Gujarat", group: "Personal Information" },
-        { label: "Complexion", value: "Fair", group: "Personal Information" },
-        { label: "Weight", value: "70 kg", group: "Personal Information" },
-        { label: "Height", value: `5' 6"`, group: "Personal Information" },
+  /**
+   * Renders grouped biodata sections and optional subgroups.
+   */
+  function renderBiodata() {
+    detailsWrapper.classList.add("detail-sections");
+    detailsWrapper.replaceChildren();
 
-        { label: "Education", value: "IT Engineer", group: "Education & Profession" },
-        { label: "Profession", value: "Software Engineer", group: "Education & Profession" },
-        { label: "Work Place", value: "KPIT Technologies Pvt. Ltd.", group: "Education & Profession" },
-        { label: "Work Location", value: "Pune", group: "Education & Profession" },
+    sections.forEach((section) => {
+      const items = biodata.filter((item) => item.group === section.title);
 
-        { label: "Father's Name", value: "Joginbhai Vadilal Patel", group: "Family Information" },
-        { label: "Fathers's Profession", value: "Farmer", group: "Family Information" },
-        { label: "Mother's Name", value: "Urmilaben Joginbhai Patel", group: "Family Information" },
-        { label: "Mother's Profession", value: "House Wife", group: "Family Information" },
-        { label: "Brother", value: "Meet Patel", group: "Family Information" },
-        { label: "Brother's Profession", value: "Mechanical Engineer", group: "Family Information" },
+      if (items.length === 0) {
+        return;
+      }
 
-        { label: "Cast", value: "Kadva Patel", group: "Community & Background" },
-        { label: "Sub Cast", value: "42 Gam  Kadva Patel", group: "Community & Background" },
-        { label: "Native", value: "Kapadwanj", group: "Community & Background" },
-        { label: "Mosal", value: "Finav, Khambhat", group: "Community & Background" },
+      const sectionCard = createElement("section", "detail-section");
+      const heading = createElement("div", "detail-section-heading");
 
-        { label: "Food Habit", value: "Veg", group: "Lifestyle & Address" },
-        { label: "Address", value: "C 1102, Aryaman Kalpvruksh, Hathijan Circle, Ahmedabad – 382445", group: "Lifestyle & Address" }
-    ];
+      const number = createElement(
+        "span",
+        "detail-section-number",
+        section.number,
+      );
 
-    const sections = [
-        { title: "Personal Information", subtitle: "A little about me", number: "01", icon: "✦" },
-        { title: "Education & Profession", subtitle: "Education and career", number: "02", icon: "▤" },
-        { title: "Family Information", subtitle: "The people closest to me", number: "03", icon: "♡" },
-        { title: "Community & Background", subtitle: "Roots and community", number: "04", icon: "⌂" },
-        { title: "Lifestyle & Address", subtitle: "Everyday preferences", number: "05", icon: "⌖" }
-    ];
+      const headingText = createElement("div", "detail-section-heading-text");
 
-    /**
-     * Creates an element and optionally assigns its class and text.
-     */
-    function createElement(tagName, className, text) {
-        const element = document.createElement(tagName);
+      const title = createElement("h6", "", section.title);
+      const subtitle = createElement("p", "", section.subtitle);
+      const icon = createElement("span", "detail-section-icon", section.icon);
 
-        if (className) {
-            element.className = className;
+      icon.setAttribute("aria-hidden", "true");
+
+      headingText.append(title, subtitle);
+      heading.append(number, headingText, icon);
+      sectionCard.appendChild(heading);
+
+      // Group items by subgroup while preserving their order.
+      const groupedItems = new Map();
+
+      items.forEach((item) => {
+        const subgroupName = item.subgroup || "";
+
+        if (!groupedItems.has(subgroupName)) {
+          groupedItems.set(subgroupName, []);
         }
 
-        if (text !== undefined) {
-            element.textContent = text;
+        groupedItems.get(subgroupName).push(item);
+      });
+
+      groupedItems.forEach((subgroupItems, subgroupName) => {
+        const subgroupContainer = createElement("div", "detail-subgroup");
+
+        // Add subgroup heading when available.
+        if (subgroupName) {
+          const subgroupTitle = createElement(
+            "h6",
+            "detail-subgroup-title",
+            subgroupName,
+          );
+
+          subgroupContainer.appendChild(subgroupTitle);
         }
 
-        return element;
-    }
+        const itemsGrid = createElement("div", "detail-items-grid");
 
-    /**
-     * Renders the grouped biodata sections.
-     */
-    function renderBiodata() {
-        detailsWrapper.classList.add("detail-sections");
-        detailsWrapper.replaceChildren();
+        subgroupItems.forEach((item) => {
+          const itemCard = createElement("div", "detail-item-card");
 
-        sections.forEach((section) => {
-            const items = biodata.filter((item) => item.group === section.title);
+          const label = createElement("span", "detail-item-label", item.label);
 
-            if (items.length === 0) {
-                return;
-            }
+          const value = createElement("span", "detail-item-value", item.value);
 
-            const sectionCard = createElement("section", "detail-section");
-            const heading = createElement("div", "detail-section-heading");
-
-            const number = createElement(
-                "span",
-                "detail-section-number",
-                section.number
-            );
-
-            const headingText = createElement(
-                "div",
-                "detail-section-heading-text"
-            );
-
-            const title = createElement("h6", "", section.title);
-            const subtitle = createElement("p", "", section.subtitle);
-            const icon = createElement("span", "detail-section-icon", section.icon);
-
-            icon.setAttribute("aria-hidden", "true");
-
-            headingText.append(title, subtitle);
-            heading.append(number, headingText, icon);
-
-            const itemsGrid = createElement("div", "detail-items-grid");
-
-            items.forEach((item) => {
-                const itemCard = createElement("div", "detail-item-card");
-                const label = createElement("span", "detail-item-label", item.label);
-                const value = createElement("span", "detail-item-value", item.value);
-
-                itemCard.append(label, value);
-                itemsGrid.appendChild(itemCard);
-            });
-
-            sectionCard.append(heading, itemsGrid);
-            detailsWrapper.appendChild(sectionCard);
+          itemCard.append(label, value);
+          itemsGrid.appendChild(itemCard);
         });
-    }
 
-    /**
-     * Renders the image gallery.
-     */
-    function renderGallery() {
-        const imageNames = ["harsh2.jpg", "harsh3.JPG", "harsh4.jpg", "harsh5.jpg"];
-        imagesWrapper.replaceChildren();
+        subgroupContainer.appendChild(itemsGrid);
+        sectionCard.appendChild(subgroupContainer);
+      });
 
-        imageNames.forEach((imageName) => {
-            const imageContainer = createElement("div", "card-back-img");
-            const image = createElement("img");
+      detailsWrapper.appendChild(sectionCard);
+    });
+  }
 
-            image.className = "pop-img";
-            image.src = `./assets/harsh/${imageName}`;
-            image.alt = "Profile Picture";
+  /**
+   * Renders the image gallery.
+   */
+  function renderGallery() {
+    const imageNames = [
+      "harsh4.png",
+      "harsh5.png",
+      "harsh6.png",
+      "harsh7.png",
+      "harsh8.png",
+    ];
 
-            imageContainer.appendChild(image);
-            imagesWrapper.appendChild(imageContainer);
-        });
-    }
+    imagesWrapper.replaceChildren();
 
-    /**
-     * Opens the Bootstrap image preview modal.
-     */
-    function bindImagePreview() {
-        document.querySelectorAll(".pop-img").forEach((image) => {
-            image.addEventListener("click", () => {
-                document.querySelector(".imagepreview").src = image.src;
-                $("#imagemodal").modal("show");
-            });
-        });
-    }
+    imageNames.forEach((imageName) => {
+      const imageContainer = createElement("div", "card-back-img");
+      const image = createElement("img");
 
-    renderBiodata();
-    renderGallery();
-    bindImagePreview();
+      image.className = "pop-img";
+      image.src = `./assets/harsh/${imageName}`;
+      image.alt = "Profile Picture";
+
+      imageContainer.appendChild(image);
+      imagesWrapper.appendChild(imageContainer);
+    });
+  }
+
+  /**
+   * Opens the Bootstrap image preview modal.
+   */
+  function bindImagePreview() {
+    document.querySelectorAll(".pop-img").forEach((image) => {
+      image.addEventListener("click", () => {
+        document.querySelector(".imagepreview").src = image.src;
+        $("#imagemodal").modal("show");
+      });
+    });
+  }
+
+  renderBiodata();
+  renderGallery();
+  bindImagePreview();
 });
